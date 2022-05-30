@@ -4,7 +4,7 @@
 
 _Duration: Weekend Assignment
 
-This project takes in a user input as a task and adds the task to a list. The task object is sent to the server via routes and send back using Ajax call method. To mark a task as complete, click the 'Complete' button and the task text will be striked through. Click the delete button to delete the task from the browser and server. 
+This project takes in a user input as a task and adds the task to a list. To mark the task as complete, click the 'Complete' button and the text be striked through. To delete the task, click the 'Delete' button. Note, it will delete from the browser and database.
 
 ## Screen Shot
 
