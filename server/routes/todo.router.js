@@ -42,11 +42,26 @@ todoRouter.delete("/:index", (req, res) => {
   pool
     .query(queryString)
     .then((results) => {
-      res.send(200);
+      res.sendStatus(200);
     })
     .catch((err) => {
       console.log(err);
       res.send(500);
+    });
+});
+
+// PUT route
+todoRouter.put("/:id", (req, res) => {
+  console.log("/todo PUT:", req.params.id);
+  const queryString = `UPDATE "tasks" SET "status"='true' WHERE id=${req.params.id};`;
+  pool
+    .query(queryString)
+    .then((results) => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
     });
 });
 

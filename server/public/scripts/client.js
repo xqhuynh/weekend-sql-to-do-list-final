@@ -2,11 +2,14 @@ $(document).ready(onReady);
 
 function onReady() {
   console.log("In JS");
+  // GET task list as soon as page loads
   refreshTaskList();
   // Click event handler for add new task button
   $("#newTaskButton").on("click", addTask);
-  // Click event handler for delete button
+  // Click event handler for delete task button
   $("#taskOut").on("click", ".deleteButton", deleteTask);
+  // CLick event handler for complete task button
+  $("#taskOut").on("click", ".completeButton", completeTask);
 }
 
 // GET Ajax call
@@ -39,10 +42,12 @@ function addTask() {
     url: "/todo",
     data: taskToSend,
   })
-    .then(function (response) {
+    .then((response) => {
       console.log("Response from server: ", response);
       // Refresh page after addTask is called
       refreshTaskList();
+      // Clear add task input after user clicks add button
+      $("#newTaskIn").val("");
     })
     .catch(function (error) {
       console.log("Error in POST function: ", error);
@@ -61,17 +66,17 @@ function appendTasks(listOfTasks) {
           <tr>
               <td>${taskObject.task}</td>
               <td>No</td>
-              <td><button class="completeButton" data-id="${taskObject.id}">Task Completed</button></td>
-              <td><button class="deleteButton" data-index=${taskObject.id}>Delete</button></td>
+              <td><button class="completeButton" data-id="${taskObject.id}">Mark Task Completed</button></td>
+              <td><button class="deleteButton" data-index=${taskObject.id}>❌</button></td>
           </tr>
           `);
     } else if (taskObject.status === true) {
       $("#taskOut").append(`
           <tr class="completedTask" data-id="${taskObject.id}">
               <td>${taskObject.task}</td>
-              <td>Finished</td>
-              <td>DONE!</td>
-              <td><button class="deleteButton" data-index=${taskObject.id}>Delete</button></td>
+              <td>Yes</td>
+              <td>Completed</td>
+              <td><button class="deleteButton" data-index=${taskObject.id}>❌</button></td>
           </tr>
           `);
     }
@@ -80,17 +85,34 @@ function appendTasks(listOfTasks) {
 
 // DELETE Ajax call to delete task
 function deleteTask() {
-  console.log("in delete task", $(this).data("index"));
+  console.log("in deleteTask DELETE ajax call");
 
   $.ajax({
     type: "DELETE",
     url: "/todo/" + $(this).data("index"),
   })
-    .then(function (response) {
-      console.log("DELETE ajax call", response);
+    .then((response) => {
+      console.log("DELETE ajax call successful", response);
       refreshTaskList();
     })
     .catch(function (err) {
       console.log("DELETE ajax call error", err);
+    });
+}
+
+// PUT Ajax call to update task as completed
+function completeTask() {
+  console.log("in complete task", $(this).data("id"));
+  let id = $(this).data("id");
+  $.ajax({
+    type: "PUT",
+    url: "/todo/" + id,
+  })
+    .then((response) => {
+      console.log("PUT ajax call successful", response);
+      refreshTaskList();
+    })
+    .catch(function (err) {
+      console.log("PUT ajax call failed", err);
     });
 }
