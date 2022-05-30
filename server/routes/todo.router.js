@@ -20,4 +20,20 @@ todoRouter.get("/", (req, res) => {
     });
 });
 
+// POST route
+todoRouter.post("/", (req, res) => {
+  let newTask = req.body;
+  console.log(`New task added`, newTask);
+  let queryText = `INSERT INTO "tasks" ("task") VALUES ($1);`;
+  pool
+    .query(queryText, [newTask.task])
+    .then((result) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log(`POST request error`, err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = todoRouter;

@@ -2,11 +2,13 @@ $(document).ready(onReady);
 
 function onReady() {
   console.log("In JS");
-  getTasks();
+  refreshTaskList();
+  // Click event handler for add new task button
+  $("#newTaskButton").on("click", addTask);
 }
 
 // GET Ajax call
-function getTasks() {
+function refreshTaskList() {
   console.log("In getTasks");
   $.ajax({
     method: "GET",
@@ -18,6 +20,31 @@ function getTasks() {
     })
     .catch((err) => {
       console.log("GET tasks failed", err);
+    });
+}
+
+// POST Ajax call to add task
+function addTask() {
+  console.log("In addTask POST function");
+  // Create object to send to server
+  let taskToSend = {
+    task: $("#newTaskIn").val(),
+    status: "",
+  };
+  // Ajax POST call
+  $.ajax({
+    type: "POST",
+    url: "/todo",
+    data: taskToSend,
+  })
+    .then(function (response) {
+      console.log("Response from server: ", response);
+      // Refresh page after addTask is called
+      refreshTaskList();
+    })
+    .catch(function (error) {
+      console.log("Error in POST function: ", error);
+      alert("Unable to add task");
     });
 }
 
