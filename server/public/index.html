@@ -15,11 +15,21 @@
         <h1>To Do App</h1>
       </header>
       <h2>Add To List</h2>
-      <input type="text" class="inputText" placeholder="Add task" />
-      <button class="addButton">Add</button>
+      <input type="text" id="newTaskIn" placeholder="Add task" />
+      <button id="newTaskButton">Add</button>
     </div>
-    <ul class="viewTasks">
-      PLACEHOLDER
-    </ul>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>To Do</th>
+            <th>Complete?</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="taskOut"></tbody>
+      </table>
+    </div>
   </body>
 </html>

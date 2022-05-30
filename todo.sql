@@ -1,10 +1,10 @@
-CREATE TABLE todo (
+CREATE TABLE tasks (
 	id SERIAL PRIMARY KEY,
-	task VARCHAR(300) NOT NULL, 
+	task VARCHAR(150) NOT NULL, 
 	status BOOLEAN DEFAULT false
 );
 
-INSERT INTO todo
+INSERT INTO tasks
 	(task, status)
 VALUES
 	('Wash dishes', false), 

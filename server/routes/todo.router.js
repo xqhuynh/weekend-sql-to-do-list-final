@@ -7,7 +7,7 @@ const pool = require("../modules/pool");
 // GET request
 todoRouter.get("/", (req, res) => {
   console.log("In GET route");
-  let queryText = `SELECT * FROM todo;`;
+  let queryText = `SELECT * FROM tasks;`;
   pool
     .query(queryText)
     .then((result) => {
