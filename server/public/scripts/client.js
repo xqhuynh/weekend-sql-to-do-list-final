@@ -58,6 +58,7 @@ function addTask() {
 // Function to append to DOM
 function appendTasks(listOfTasks) {
   console.log("In appendTasks: ");
+  // Empty task list
   $("#taskOut").empty();
   for (let i = 0; i < listOfTasks.length; i++) {
     let taskObject = listOfTasks[i];
@@ -66,8 +67,8 @@ function appendTasks(listOfTasks) {
           <tr>
               <td>${taskObject.task}</td>
               <td>No</td>
-              <td><button class="completeButton" data-id="${taskObject.id}">Mark Task Completed</button></td>
-              <td><button class="deleteButton" data-index=${taskObject.id}>❌</button></td>
+              <td><button class="completeButton" data-id="${taskObject.id}">✅</button></td>
+              <td><button class="deleteButton" data-index=${taskObject.id}>Delete</button></td>
           </tr>
           `);
     } else if (taskObject.status === true) {
@@ -76,7 +77,7 @@ function appendTasks(listOfTasks) {
               <td>${taskObject.task}</td>
               <td>Yes</td>
               <td>Completed</td>
-              <td><button class="deleteButton" data-index=${taskObject.id}>❌</button></td>
+              <td><button class="deleteButton" data-index=${taskObject.id}>Delete</button></td>
           </tr>
           `);
     }
