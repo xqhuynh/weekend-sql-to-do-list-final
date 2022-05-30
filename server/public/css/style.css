@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: white;
+  background-color: rgb(33, 95, 211);
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 50px;
+  font-size: 3rem;
+}
+
+h2 {
+  margin-left: 25px;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+table,
+.inputInfo {
+  margin-left: 25px;
+  margin-bottom: 25px;
+}
+
+#newTaskIn {
+  width: 400px;
+  height: 35px;
+  text-align: center;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  background-color: rgb(200, 213, 235);
+}
+
+#newTaskButton {
+  width: 10%;
+  height: 35px;
+  font-size: 1.25rem;
+  background-color: rgb(200, 213, 235);
+  border-radius: 5px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+#newTaskButton:hover {
+  background-color: rgb(124, 162, 227);
+}
+
+th {
+  padding: 15px;
+  font-size: 1.25rem;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+}
+
+.completeButton {
+  border: 1px solid green;
+  width: 100px;
+  height: 35px;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: white;
+  background-color: green;
+}
+
+.completeButton:hover {
+  background-color: rgb(151, 197, 151);
+}
+
+.deleteButton {
+  border: 1px solid red;
+  width: 75px;
+  height: 35px;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+}
+
+.deleteButton:hover {
+  background-color: rgb(238, 156, 156);
+}
+
+tbody {
+  font-size: 1.25rem;
+}
+
+.completeTaskToggle {
+  text-decoration: line-through;
+}
