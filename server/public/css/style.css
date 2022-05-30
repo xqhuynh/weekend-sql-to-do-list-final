@@ -58,6 +58,20 @@ td {
   padding: 10px;
 }
 
+.completeButton {
+  border: 1px solid green;
+  width: 100px;
+  height: 35px;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: white;
+  background-color: green;
+}
+
+.completeButton:hover {
+  background-color: rgb(151, 197, 151);
+}
+
 .deleteButton {
   border: 1px solid red;
   width: 75px;
@@ -74,4 +88,8 @@ td {
 
 tbody {
   font-size: 1.25rem;
+}
+
+.completeTaskToggle {
+  text-decoration: line-through;
 }

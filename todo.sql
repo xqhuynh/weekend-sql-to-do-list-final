@@ -9,4 +9,4 @@ INSERT INTO tasks
 VALUES
 	('Wash dishes', false), 
 	('Pick up groceries from Target', false),
-	('Clean bathroom', true);
+	('Clean bathroom', false);

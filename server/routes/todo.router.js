@@ -7,7 +7,8 @@ const pool = require("../modules/pool");
 // GET request
 todoRouter.get("/", (req, res) => {
   console.log("In GET route");
-  let queryText = `SELECT * FROM tasks;`;
+  // Display tasks in ascending order (A => Z)
+  let queryText = `SELECT * FROM tasks ORDER BY task ASC;`;
   pool
     .query(queryText)
     .then((result) => {

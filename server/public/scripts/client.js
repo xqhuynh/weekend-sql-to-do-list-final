@@ -60,23 +60,27 @@ function appendTasks(listOfTasks) {
   console.log("In appendTasks: ");
   // Empty task list
   $("#taskOut").empty();
+  // Loop through task items
   for (let i = 0; i < listOfTasks.length; i++) {
+    // Set variables to hold index of listOfTasks (listOfTask[i])
     let taskObject = listOfTasks[i];
+    // If task status is false
     if (taskObject.status === false) {
       $("#taskOut").append(`
           <tr>
               <td>${taskObject.task}</td>
-              <td>No</td>
-              <td><button class="completeButton" data-id="${taskObject.id}">✅</button></td>
+              <td><button class="completeButton" data-id="${taskObject.id}">Complete</button></td>
               <td><button class="deleteButton" data-index=${taskObject.id}>Delete</button></td>
           </tr>
           `);
+      // If task status is set to true
     } else if (taskObject.status === true) {
+      // jquery addClass method to strike through text after mark complete button clicked
+      // Target completeTaskToggle class
       $("#taskOut").append(`
           <tr class="completedTask" data-id="${taskObject.id}">
-              <td>${taskObject.task}</td>
-              <td>Yes</td>
-              <td>Completed</td>
+              <td class="completeTaskToggle">${taskObject.task}</td>
+              <td >Done</td>
               <td><button class="deleteButton" data-index=${taskObject.id}>Delete</button></td>
           </tr>
           `);
@@ -103,7 +107,8 @@ function deleteTask() {
 
 // PUT Ajax call to update task as completed
 function completeTask() {
-  console.log("in complete task", $(this).data("id"));
+  console.log("In completeTask ajax PUT call");
+  // User $(this) to target task ID
   let id = $(this).data("id");
   $.ajax({
     type: "PUT",
