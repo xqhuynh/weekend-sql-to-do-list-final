@@ -36,4 +36,18 @@ todoRouter.post("/", (req, res) => {
     });
 });
 
+// DELETE route
+todoRouter.delete("/:index", (req, res) => {
+  let queryString = `DELETE FROM "tasks" WHERE "id"=${req.params.index};`;
+  pool
+    .query(queryString)
+    .then((results) => {
+      res.send(200);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send(500);
+    });
+});
+
 module.exports = todoRouter;

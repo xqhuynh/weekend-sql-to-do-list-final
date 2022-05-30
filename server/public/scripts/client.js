@@ -5,6 +5,8 @@ function onReady() {
   refreshTaskList();
   // Click event handler for add new task button
   $("#newTaskButton").on("click", addTask);
+  // Click event handler for delete button
+  $("#taskOut").on("click", ".deleteButton", deleteTask);
 }
 
 // GET Ajax call
@@ -48,6 +50,7 @@ function addTask() {
     });
 }
 
+// Function to append to DOM
 function appendTasks(listOfTasks) {
   console.log("In appendTasks: ");
   $("#taskOut").empty();
@@ -73,4 +76,21 @@ function appendTasks(listOfTasks) {
           `);
     }
   }
+}
+
+// DELETE Ajax call to delete task
+function deleteTask() {
+  console.log("in delete task", $(this).data("index"));
+
+  $.ajax({
+    type: "DELETE",
+    url: "/todo/" + $(this).data("index"),
+  })
+    .then(function (response) {
+      console.log("DELETE ajax call", response);
+      refreshTaskList();
+    })
+    .catch(function (err) {
+      console.log("DELETE ajax call error", err);
+    });
 }
