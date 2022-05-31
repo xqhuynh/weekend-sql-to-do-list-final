@@ -27,6 +27,20 @@ This project takes in a user input as a task and adds the task to a list. To mar
 7. Run npm server/server.js file 
 8. Localhost will be 5000 (Localhost:5000)
 
+## Data Structure
+
+├── INSTRUCTIONS.md
+├── README.md
+├── package-lock.json
+├── package.json
+├── pseudocode.md
+├── server
+│   ├── modules
+│   ├── public
+│   ├── routes
+│   └── server.js
+└── todo.sql
+
 ## Usage
 This to do tasks web application is intended for educational use to gain knowledge on the following technologies.
 
