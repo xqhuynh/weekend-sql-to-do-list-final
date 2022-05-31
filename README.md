@@ -29,6 +29,7 @@ This project takes in a user input as a task and adds the task to a list. To mar
 
 ## Data Structure
 
+```
 ├── INSTRUCTIONS.md
 ├── README.md
 ├── package-lock.json
@@ -40,6 +41,7 @@ This project takes in a user input as a task and adds the task to a list. To mar
 │   ├── routes
 │   └── server.js
 └── todo.sql
+```
 
 ## Usage
 This to do tasks web application is intended for educational use to gain knowledge on the following technologies.
