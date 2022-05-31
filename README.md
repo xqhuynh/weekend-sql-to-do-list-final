@@ -30,15 +30,25 @@ This project takes in a user input as a task and adds the task to a list. To mar
 ## Data Structure
 
 ```
-├── INSTRUCTIONS.md
 ├── README.md
 ├── package-lock.json
 ├── package.json
 ├── pseudocode.md
 ├── server
 │   ├── modules
+│   │   └── pool.js
 │   ├── public
+│   │   ├── css
+│   │   │   └── style.css
+│   │   ├── images
+│   │   │   └── toDoAppFigma.png
+│   │   ├── index.html
+│   │   ├── scripts
+│   │   │   └── client.js
+│   │   └── vendors
+│   │       └── jquery.js
 │   ├── routes
+│   │   └── todo.router.js
 │   └── server.js
 └── todo.sql
 ```
