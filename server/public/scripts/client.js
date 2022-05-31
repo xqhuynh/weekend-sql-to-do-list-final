@@ -14,7 +14,7 @@ function onReady() {
 
 // GET Ajax call
 function refreshTaskList() {
-  console.log("In getTasks");
+  console.log("In refreshTaskList");
   $.ajax({
     method: "GET",
     url: "/todo",
@@ -64,7 +64,7 @@ function appendTasks(listOfTasks) {
   for (let i = 0; i < listOfTasks.length; i++) {
     // Set variables to hold index of listOfTasks (listOfTask[i])
     let taskObject = listOfTasks[i];
-    // If task status is false
+    // If task status is false (is set to false by default in SQL query)
     if (taskObject.status === false) {
       $("#taskOut").append(`
           <tr>
@@ -98,6 +98,7 @@ function deleteTask() {
   })
     .then((response) => {
       console.log("DELETE ajax call successful", response);
+    // Refresh data after deleteTask()
       refreshTaskList();
     })
     .catch(function (err) {
@@ -116,6 +117,7 @@ function completeTask() {
   })
     .then((response) => {
       console.log("PUT ajax call successful", response);
+    // Refresh data after completeTask()
       refreshTaskList();
     })
     .catch(function (err) {
