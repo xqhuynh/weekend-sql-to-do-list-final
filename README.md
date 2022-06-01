@@ -4,7 +4,7 @@
 
 _Duration: Weekend Assignment
 
-This project takes in a user input as a task and adds the task to a list. To mark the task as complete, click the 'Complete' button and the text be striked through. To delete the task, click the 'Delete' button. Note, it will delete from the browser and database.
+This project takes in a user input as a task and adds the task to a list. To mark the task as complete, click the 'Complete' button and the text will be striked through. To delete the task, click the 'Delete' button. Note, it will delete from the browser and database.
 
 ## Screen Shot
 
