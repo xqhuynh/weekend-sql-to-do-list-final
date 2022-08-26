@@ -10,3 +10,5 @@ VALUES
 	('Wash dishes', false), 
 	('Pick up groceries from Target', false),
 	('Clean bathroom', false);
+
+-- Test
