@@ -71,4 +71,6 @@ This to do tasks web application is intended for educational use to gain knowled
 Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. 
 
 ## Support
-If you have suggestions or issues, please email me at xqhuynh@gmail.com.
+If you have suggestions or issues, please email me at <a hrefwww.linkedin.com/in/savon-huynh
+"">![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
+</a>
