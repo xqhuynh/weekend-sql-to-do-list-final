@@ -13,7 +13,6 @@ This project takes in a user input as a task and adds the task to a list. To mar
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
-- [npm]
 - [Postgres](https://postgresapp.com/)
 - [Postico](https://eggerapps.at/postico/)
 
